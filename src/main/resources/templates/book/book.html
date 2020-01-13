@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Books Manager</title>
+</head>
+<body>
+<div align="center">
+    <h1>Books Manager</h1>
+    <a href="/book/new">ADD new Book</a>
+    <br/><br/>
+    <table border ="1" cellpadding="10">
+
+        <thead>
+        <tr>
+            <th>Book ID</th>
+            <th>Book Title</th>
+            <th>Authors</th>
+            <th>Publishers</th>
+            <th>ISBN</th>
+            <th>Genre</th>
+            <th>Year</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="book : ${listBooks}">
+            <td><span th:text="${book.bookID}"> ID </span></td>
+            <td><span th:text="${book.title}"> Title </span></td>
+            <td><span th:text="${book.authors}"> Authors </span></td>
+            <td><span th:text="${book.publisher}"> Publisher </span></td>
+            <td><span th:text="${book.isbn}"> ISBN </span></td>
+            <td><span th:text="${book.genre}"> Genre </span></td>
+            <td><span th:text="${book.year}"> Year </span></td>
+            <td><span th:text="${book.price}"> Price </span></td>
+            <td><span th:text="${book.stock}"> Stock </span></td>
+
+            <td>
+                <a th:href="@{'/book/edit/' + ${book.bookID}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/book/delete/' + ${book.bookID}}">Delete</a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+</body>
+</html>

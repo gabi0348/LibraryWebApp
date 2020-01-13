@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="stylecss.css">
+</head>
+<body>
+<div class="login-page">
+    <div class="form">
+        <form class="register-form">
+            <p class="message">Registration </p>
+            <input id="firstName" type="text" placeholder="First name"/>
+            <input id="secondName" type="text" placeholder="Second name"/>
+            <input id="email" type="text" placeholder="Email"/>
+            <input id="password" type="text" placeholder="Password"/>
+            <input id="phone" type="text" placeholder="Phone number"/>
+            <input id="street" type="text" placeholder="Street"/>
+            <input id="city" type="text" placeholder="City"/>
+            <input value="Submit" onClick="sendLogin()">
+
+        </form>
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script>
+    var sendLogin = function () {
+        var data = {};
+        data['firstName'] = $('#firstName').val();
+        data['secondName'] = $('#secondName').val();
+        data['email'] = $('#email').val();
+        data['password'] = $('#password').val();
+        data['phone'] = $('#phone').val();
+        data['street'] = $('#street').val();
+        data['city'] = $('#city').val();
+
+        $.ajax({
+            type: "POST",
+            url: "/login/submit",
+            data: JSON.stringify(data),
+            contentType: 'application/json'
+        });
+    }
+
+</script>
+
+</body>
+<html>

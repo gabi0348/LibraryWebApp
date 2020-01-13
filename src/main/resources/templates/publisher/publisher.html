@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Publisher Manager</title>
+</head>
+<body>
+<div align="center">
+    <h1>Publisher Manager</h1>
+    <a href="/publisher/new">ADD new Publisher</a>
+    <br/><br/>
+    <table border ="1" cellpadding="10">
+
+        <thead>
+        <tr>
+            <th>Publisher ID</th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="publisher : ${listPublishers}">
+            <td><span th:text="${publisher.publisherID}"> ID </span></td>
+            <td><span th:text="${publisher.name}"> Name </span></td>
+            <td>
+                <a th:href="@{'/publisher/edit/' + ${publisher.publisherID}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/publisher/delete/' + ${publisher.publisherID}}">Delete</a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+</body>
+</html>
+
+</html>
