@@ -2,42 +2,30 @@ package com.example.demo.controller;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AppController {
 
-//    @Autowired
-//    private BooksService service;
-//
-//
-//
-//    @RequestMapping(value = "/author/save", method = RequestMethod.POST)
-//    public String saveAuthor(@ModelAttribute("newAuthor") Authors author) {
-//        service.save(author);
-//
-//        return "redirect:/";
-//    }
-//
-//    @GetMapping("/author/new")
-//    public ModelAndView newAuthor() {
-//        Authors newAuthor = new Authors();
-//        ModelAndView model = new ModelAndView("new_author");
-//        model.addObject("newAuthor", newAuthor);
-//
-//        return model;
-//
-//    }
+    @GetMapping({"/","/login"})
+    public String index() {
+        return "index";
+    }
 
-    /*
-        @PostMapping(value = "/update")
-        public String updateProduct(@ModelAttribute("product") Books new_book) {
-            service.save(new_book);
+    @GetMapping("/menu")
+    public String menu() {
+        return "menu";
+    }
 
-            return "redirect:/";
-        }
+    @GetMapping("/user")
+    public String user() {
+        return "user";
+    }
 
-     */
-
+    @GetMapping("/admin")
+    public String admin() {
+        return "admin";
+    }
 
 
 }
