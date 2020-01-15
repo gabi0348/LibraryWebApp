@@ -4,17 +4,20 @@
 <head>
     <meta charset="utf-8">
     <title>Authors Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
-<div align="center">
-    <h1>Books Manager</h1>
-    <a href="/author/new">ADD new Author</a>
+<div class="container">
+    <h1>Authors Manager</h1>
+    <a class="waves-effect waves-light btn" href="/author/new"><i class="material-icons left">add</i> New Author</a>
     <br/><br/>
-    <table border ="1" cellpadding="10">
+    <table border="1" cellpadding="10">
 
         <thead>
         <tr>
-            <th  hidden>Author ID</th>
+            <th hidden>Author ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Actions</th>
@@ -27,9 +30,8 @@
             <td><span th:text="${author.firstName}"> First Name </span></td>
             <td><span th:text="${author.secondName}"> Last Name </span></td>
             <td>
-                <a th:href="@{'/author/edit/' + ${author.authorID}}">Edit</a>
-
-                <a th:href="@{'/author/delete/' + ${author.authorID}}">Delete</a>
+                <a class="waves-effect waves-light btn" th:href="@{'/author/edit/' + ${author.authorID}}"><i class="material-icons left">edit</i> Edit</a>
+                <a class="waves-effect waves-light red btn" th:href="@{'/author/delete/' + ${author.authorID}}"><i class="material-icons left">delete</i> Delete</a>
             </td>
 
         </tr>
@@ -38,5 +40,6 @@
 
 
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+</html>

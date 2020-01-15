@@ -4,11 +4,14 @@
 <head>
     <meta charset="utf-8">
     <title>Publisher Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
-<div align="center">
+<div class="container">
     <h1>Publisher Manager</h1>
-    <a href="/publisher/new">ADD new Publisher</a>
+    <a class="waves-effect waves-light btn" href="/publisher/new"><i class="material-icons left">add</i> New Author</a>
     <br/><br/>
     <table border ="1" cellpadding="10">
 
@@ -25,9 +28,9 @@
             <td hidden><span th:text="${publisher.publisherID}"> ID </span></td>
             <td><span th:text="${publisher.name}"> Name </span></td>
             <td>
-                <a th:href="@{'/publisher/edit/' + ${publisher.publisherID}}">Edit</a>
+                <a class="waves-effect waves-light btn" th:href="@{'/publisher/edit/' + ${publisher.publisherID}}"><i class="material-icons left">edit</i> Edit</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a th:href="@{'/publisher/delete/' + ${publisher.publisherID}}">Delete</a>
+                <a class="waves-effect waves-light red btn" th:href="@{'/publisher/delete/' + ${publisher.publisherID}}"><i class="material-icons left">delete</i> Delete</a>
             </td>
 
         </tr>

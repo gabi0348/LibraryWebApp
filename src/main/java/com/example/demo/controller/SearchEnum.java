@@ -7,7 +7,8 @@ public enum SearchEnum {
     TITLE("title"),
     YEAR("year"),
     ISBN("isbn"),
-    GENRE("genre");
+    GENRE("genre"),
+    SALES("sales");
 
     String name;
 

@@ -27,4 +27,9 @@ public interface BooksRepository extends JpaRepository<Books, Integer> {
     public Iterable<Books> getBooksByPublisher(String publisher);
 
 
+    @Query(nativeQuery = true,value = "select * \n" +
+            "from books b inner join books_authors ba on (b.book_id=ba.book_id)\n" +
+            "inner join authors a on (a.author_id=ba.author_id)\n" +
+            "where a.first_name=?1 or a.second_name=?1" )
+    Iterable<Books> getSalesBooks();
 }

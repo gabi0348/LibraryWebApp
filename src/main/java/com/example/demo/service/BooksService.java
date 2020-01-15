@@ -73,4 +73,8 @@ public class BooksService {
     public Iterable<Books> findBooksByYear(int parseInt) {
         return booksRepo.findByYear(parseInt);
     }
+
+    public Iterable<Books> findSalesBooks() {
+        return booksRepo.getSalesBooks();
+    }
 }

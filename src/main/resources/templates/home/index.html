@@ -34,8 +34,28 @@
         </div>
     </div>
 
+    <div class="input-field col s12">
+        <div class="input-field row">
+            <div class="input-field col s2">
+                <a id="btn1" class="waves-effect waves-light btn">Btn1</a>
+            </div>
+            <div class="input-field col s2">
+                <a id="btn2" class="waves-effect waves-light btn">Btn2</a>
+            </div>
+            <div class="input-field col s2">
+                <a id="btn3" class="waves-effect waves-light btn">Btn3</a>
+            </div>
+            <div class="input-field col s2">
+                <a id="btn4" class="waves-effect waves-light btn">Btn4</a>
+            </div>
+            <div class="input-field col s2">
+                <a id="btn5" class="waves-effect waves-light btn">Btn5</a>
+            </div>
+        </div>
+    </div>
+
     <div class="col s12">
-        <table border="1" cellpadding="10">
+        <table class="centered highlight">
             <thead>
             <tr>
                 <th hidden>Book ID</th>
@@ -88,7 +108,15 @@
             url.searchParams.set(type, text);
 
             window.location = url;
-        })
+        });
+
+        $('#btn1').click(function () {
+            var url = window.location.href;
+            url = url.substring(0, url.indexOf('?'));
+            url = new URL(url);
+            url.searchParams.set("sales", "true");
+            window.location = url;
+        });
     });
 
 

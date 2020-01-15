@@ -4,13 +4,16 @@
 <head>
     <meta charset="utf-8">
     <title>Books Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
-<div align="center">
+<div>
     <h1>Books Manager</h1>
-    <a href="/book/new">ADD new Book</a>
+    <a class="waves-effect waves-light btn" href="/book/new"><i class="material-icons left">add</i> New Book</a>
     <br/><br/>
-    <table border ="1" cellpadding="10">
+    <table class="striped highlight centered responsive-table">
 
         <thead>
         <tr>
@@ -40,9 +43,9 @@
             <td><span th:text="${book.stock}"> Stock </span></td>
 
             <td>
-                <a th:href="@{'/book/edit/' + ${book.bookID}}">Edit</a>
+                <a class="waves-effect waves-light btn" th:href="@{'/book/edit/' + ${book.bookID}}"><i class="material-icons left">edit</i> Edit</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a th:href="@{'/book/delete/' + ${book.bookID}}">Delete</a>
+                <a class="waves-effect waves-light red btn" th:href="@{'/book/delete/' + ${book.bookID}}"><i class="material-icons left">delete</i> Delete</a>
             </td>
 
         </tr>
@@ -51,6 +54,8 @@
 
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 
 </body>
 </html>
