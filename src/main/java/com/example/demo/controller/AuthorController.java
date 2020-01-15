@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.security.Principal;
+
 @RestController
 public class AuthorController {
 
@@ -13,7 +15,8 @@ public class AuthorController {
     private AuthorsService service;
 
     @GetMapping("/author")
-    public ModelAndView viewHomePage() {
+    public ModelAndView viewHomePage(Principal principal) {
+
 
         Iterable<Authors> listAuthors = service.listAll();
         ModelAndView model = new ModelAndView("author/author");

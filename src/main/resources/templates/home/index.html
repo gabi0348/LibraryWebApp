@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Books</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Books</h1>
+    <div class="input-field col s12">
+        <div class="input-field row">
+            <div class="input-field col s4">
+                <select id="search_type">
+                    <option value="all" selected>All</option>
+                    <option value="author">Author</option>
+                    <option value="publisher">Publisher</option>
+                    <option value="title">Title</option>
+                    <option value="genre">Genre</option>
+                    <option value="isbn">ISBN</option>
+                    <option value="year">year</option>
+                </select>
+            </div>
+            <div class="input-field col s7">
+                <input placeholder="Search String" id="search_text" type="text">
+                <label for="search_text">Search String</label>
+            </div>
+            <div class="input-field col s1">
+                <a id="search_button" class="waves-effect waves-light btn">Search</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12">
+        <table border="1" cellpadding="10">
+            <thead>
+            <tr>
+                <th hidden>Book ID</th>
+                <th>Book Title</th>
+                <th>Authors</th>
+                <th>Publishers</th>
+                <th>ISBN</th>
+                <th>Genre</th>
+                <th>Year</th>
+                <th>Price</th>
+                <th>Stock</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="book : ${listBooks}">
+                <td hidden><span th:text="${book.bookID}"> ID </span></td>
+                <td><span th:text="${book.title}"> Title </span></td>
+                <td><span th:text="${book.authors}"> Authors </span></td>
+                <td><span th:text="${book.publisher}"> Publisher </span></td>
+                <td><span th:text="${book.isbn}"> ISBN </span></td>
+                <td><span th:text="${book.genre}"> Genre </span></td>
+                <td><span th:text="${book.year}"> Year </span></td>
+                <td><span th:text="${book.price}"> Price </span></td>
+                <td><span th:text="${book.stock}"> Stock </span></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('select').formSelect();
+
+        $('#search_button').click(function () {
+            var url = window.location.href;
+            var type = $('#search_type').val();
+            var text = $('#search_text').val();
+            if(!type)
+                return;
+            url = url.substring(0, url.indexOf('?'));
+            url = new URL(url);
+            url.searchParams.set(type, text);
+
+            window.location = url;
+        })
+    });
+
+
+</script>
+</body>
+</html>

@@ -49,4 +49,28 @@ public class BooksService {
     public void save(Authors author) {
         authRepo.save(author);
     }
+
+    public Iterable<Books> findBooksByAuthor(String name) {
+        return booksRepo.getBooksByAuthorName(name);
+    }
+
+    public Iterable<Books> findBooksByPublisher(String publisher) {
+        return booksRepo.getBooksByPublisher(publisher);
+    }
+
+    public Iterable<Books> findBooksByTitle(String title) {
+        return booksRepo.findByTitle(title);
+    }
+
+    public Iterable<Books> findBooksByISBN(String isbn) {
+        return booksRepo.findByIsbn(isbn);
+    }
+
+    public Iterable<Books> findBooksByGenre(String genre) {
+        return booksRepo.findByGenre(genre);
+    }
+
+    public Iterable<Books> findBooksByYear(int parseInt) {
+        return booksRepo.findByYear(parseInt);
+    }
 }
