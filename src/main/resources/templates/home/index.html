@@ -103,7 +103,8 @@
             var text = $('#search_text').val();
             if(!type)
                 return;
-            url = url.substring(0, url.indexOf('?'));
+            if (url.includes('?'))
+                url = url.substring(0, url.indexOf('?'));
             url = new URL(url);
             url.searchParams.set(type, text);
 
@@ -112,7 +113,8 @@
 
         $('#btn1').click(function () {
             var url = window.location.href;
-            url = url.substring(0, url.indexOf('?'));
+            if (url.includes('?'))
+                url = url.substring(0, url.indexOf('?'));
             url = new URL(url);
             url.searchParams.set("sales", "true");
             window.location = url;
