@@ -14,14 +14,15 @@
 
         <thead>
         <tr>
-            <th>Publisher ID</th>
+            <th hidden>Publisher ID</th>
             <th>Name</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
 
         <tr th:each="publisher : ${listPublishers}">
-            <td><span th:text="${publisher.publisherID}"> ID </span></td>
+            <td hidden><span th:text="${publisher.publisherID}"> ID </span></td>
             <td><span th:text="${publisher.name}"> Name </span></td>
             <td>
                 <a th:href="@{'/publisher/edit/' + ${publisher.publisherID}}">Edit</a>

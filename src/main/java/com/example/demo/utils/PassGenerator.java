@@ -6,6 +6,6 @@ public class PassGenerator {
 
 	public static void main(String[] args) {
 		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
-		System.out.println(bCryptPasswordEncoder.encode("test"));
+		System.out.println(bCryptPasswordEncoder.encode("user"));
 	}
 }

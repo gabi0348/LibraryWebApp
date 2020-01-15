@@ -14,18 +14,18 @@
 
         <thead>
         <tr>
-            <th>Author ID</th>
+            <th  hidden>Author ID</th>
             <th>First Name</th>
-            <th>Second Name</th>
+            <th>Last Name</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
 
         <tr th:each="author : ${listAuthors}">
-            <td><span th:text="${author.authorID}"> ID </span></td>
+            <td hidden><span th:text="${author.authorID}"> ID </span></td>
             <td><span th:text="${author.firstName}"> First Name </span></td>
-            <td><span th:text="${author.secondName}"> Second Name </span></td>
+            <td><span th:text="${author.secondName}"> Last Name </span></td>
             <td>
                 <a th:href="@{'/author/edit/' + ${author.authorID}}">Edit</a>
 
