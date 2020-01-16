@@ -8,25 +8,25 @@ import javax.persistence.Id;
 @Entity
 public class Orders {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int commandID;
-	private int clientID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int commandID;
+    private int clientID;
 
-	public int getCommandID() {
-		return commandID;
-	}
+    public int getCommandID() {
+        return commandID;
+    }
 
-	public void setCommandID(int commandID) {
-		this.commandID = commandID;
-	}
+    public void setCommandID(int commandID) {
+        this.commandID = commandID;
+    }
 
-	public int getClientID() {
-		return clientID;
-	}
+    public int getClientID() {
+        return clientID;
+    }
 
-	public void setClientID(int clientID) {
-		this.clientID = clientID;
-	}
+    public void setClientID(int clientID) {
+        this.clientID = clientID;
+    }
 
 }

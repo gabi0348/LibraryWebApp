@@ -13,7 +13,7 @@
     <h1>Publisher Manager</h1>
     <a class="waves-effect waves-light btn" href="/publisher/new"><i class="material-icons left">add</i> New Author</a>
     <br/><br/>
-    <table border ="1" cellpadding="10">
+    <table border="1" cellpadding="10">
 
         <thead>
         <tr>
@@ -28,9 +28,12 @@
             <td hidden><span th:text="${publisher.publisherID}"> ID </span></td>
             <td><span th:text="${publisher.name}"> Name </span></td>
             <td>
-                <a class="waves-effect waves-light btn" th:href="@{'/publisher/edit/' + ${publisher.publisherID}}"><i class="material-icons left">edit</i> Edit</a>
+                <a class="waves-effect waves-light btn" th:href="@{'/publisher/edit/' + ${publisher.publisherID}}"><i
+                        class="material-icons left">edit</i> Edit</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a class="waves-effect waves-light red btn" th:href="@{'/publisher/delete/' + ${publisher.publisherID}}"><i class="material-icons left">delete</i> Delete</a>
+                <a class="waves-effect waves-light red btn"
+                   th:href="@{'/publisher/delete/' + ${publisher.publisherID}}"><i
+                        class="material-icons left">delete</i> Delete</a>
             </td>
 
         </tr>

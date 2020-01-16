@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Books</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -11,11 +12,11 @@
 <body>
 <div class="container">
     <h1>Books</h1>
-    <div class="input-field col s12">
+    <div class="input-field col s14">
         <div class="input-field row">
-            <div class="input-field col s4">
+            <div class="input-field col s3">
                 <select id="search_type">
-                    <option value="all" selected>All</option>
+
                     <option value="author">Author</option>
                     <option value="publisher">Publisher</option>
                     <option value="title">Title</option>
@@ -34,22 +35,27 @@
         </div>
     </div>
 
-    <div class="input-field col s12">
+    <div class="input-field col s13">
         <div class="input-field row">
             <div class="input-field col s2">
-                <a id="btn1" class="waves-effect waves-light btn">Btn1</a>
+                <a id="btn1" class="waves-effect waves-light btn"><i
+                    class="material-icons left">attach_money</i> Sales</a>
             </div>
-            <div class="input-field col s2">
-                <a id="btn2" class="waves-effect waves-light btn">Btn2</a>
+            <div class="input-field col s3">
+                <a id="btn2" class="waves-effect waves-light btn"><i
+                        class="material-icons left">healing</i> Health Books Deals</a>
             </div>
-            <div class="input-field col s2">
-                <a id="btn3" class="waves-effect waves-light btn">Btn3</a>
+            <div class="input-field col s3">
+                <a id="btn3" class="waves-effect waves-light btn"><i
+                        class="material-icons left">assessment</i> Top Antreprenoriat</a>
             </div>
-            <div class="input-field col s2">
-                <a id="btn4" class="waves-effect waves-light btn">Btn4</a>
+            <div class="input-field col s3">
+                <a id="btn4" class="waves-effect waves-light btn"><i
+                        class="material-icons left">reorder</i> Order By Publishers</a>
             </div>
-            <div class="input-field col s2">
-                <a id="btn5" class="waves-effect waves-light btn">Btn5</a>
+            <div class="input-field col s1">
+                <a id="btn5" class="waves-effect waves-light btn"><i
+                        class="material-icons left"></i> BEST2019</a>
             </div>
         </div>
     </div>
@@ -66,7 +72,7 @@
                 <th>Genre</th>
                 <th>Year</th>
                 <th>Price</th>
-                <th>Stock</th>
+                <th hidden>Stock</th>
             </tr>
             </thead>
             <tbody>
@@ -80,7 +86,7 @@
                 <td><span th:text="${book.genre}"> Genre </span></td>
                 <td><span th:text="${book.year}"> Year </span></td>
                 <td><span th:text="${book.price}"> Price </span></td>
-                <td><span th:text="${book.stock}"> Stock </span></td>
+                <td hidden><span th:text="${book.stock}"> Stock </span></td>
 
             </tr>
             </tbody>
@@ -101,7 +107,7 @@
             var url = window.location.href;
             var type = $('#search_type').val();
             var text = $('#search_text').val();
-            if(!type)
+            if (!type)
                 return;
             if (url.includes('?'))
                 url = url.substring(0, url.indexOf('?'));
@@ -119,6 +125,43 @@
             url.searchParams.set("sales", "true");
             window.location = url;
         });
+
+        $('#btn2').click(function () {
+            var url = window.location.href;
+            if (url.includes('?'))
+                url = url.substring(0, url.indexOf('?'));
+            url = new URL(url);
+            url.searchParams.set("sanatate", "true");
+            window.location = url;
+        });
+
+        $('#btn3').click(function () {
+            var url = window.location.href;
+            if (url.includes('?'))
+                url = url.substring(0, url.indexOf('?'));
+            url = new URL(url);
+            url.searchParams.set("topantreprenoriat", "true");
+            window.location = url;
+        });
+
+        $('#btn4').click(function () {
+            var url = window.location.href;
+            if (url.includes('?'))
+                url = url.substring(0, url.indexOf('?'));
+            url = new URL(url);
+            url.searchParams.set("orderpublisher", "true");
+            window.location = url;
+        });
+
+        $('#btn5').click(function () {
+            var url = window.location.href;
+            if (url.includes('?'))
+                url = url.substring(0, url.indexOf('?'));
+            url = new URL(url);
+            url.searchParams.set("bestseller", "true");
+            window.location = url;
+        });
+
     });
 
 

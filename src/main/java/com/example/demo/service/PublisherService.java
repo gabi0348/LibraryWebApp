@@ -15,11 +15,11 @@ public class PublisherService {
     @Autowired
     private PublishersRepository publRepo;
 
-    public Iterable<Publishers> listAll(){
+    public Iterable<Publishers> listAll() {
         return publRepo.findAll();
     }
 
-    public void save(Publishers publisher){
+    public void save(Publishers publisher) {
         publRepo.save(publisher);
     }
 

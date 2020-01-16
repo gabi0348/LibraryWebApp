@@ -22,11 +22,11 @@ public class BooksService {
     @Autowired
     private PublishersRepository publRepo;
 
-    public Iterable<Books> getAllBooks(){
+    public Iterable<Books> getAllBooks() {
         return booksRepo.findAll();
     }
 
-    public Iterable<Authors> getAllAuthors(){
+    public Iterable<Authors> getAllAuthors() {
         return authRepo.findAll();
     }
 
@@ -38,7 +38,7 @@ public class BooksService {
         booksRepo.save(book);
     }
 
-    public Books get(int book_id){
+    public Books get(int book_id) {
         return booksRepo.findById(book_id).get();
     }
 
@@ -76,5 +76,29 @@ public class BooksService {
 
     public Iterable<Books> findSalesBooks() {
         return booksRepo.getSalesBooks();
+    }
+
+    public Iterable<Books> findSanatateBooks() {
+        return booksRepo.getSanatateBooks();
+    }
+
+    //public Iterable<Books> findTopAuthorBooks() {
+     //   return booksRepo.getTopAuthorBooks();
+  //  }
+
+    public Iterable<Books> findOrderPublisherBooks() {
+        return booksRepo.getOrderPublisherBooks();
+    }
+
+    public Iterable<Books> findTopAntreprenoriatBooks (){
+        return booksRepo.getTopAntreprenoriatBooks();
+    }
+
+    public Iterable<Books> findBestSellerBooks() {
+        return booksRepo.getBestSellerBooks();
+    }
+
+    public Iterable<Books> findAllSearchBooks() {
+        return booksRepo.getAllSearchBooks();
     }
 }

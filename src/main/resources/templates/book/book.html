@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html
-      xmlns:th="http://www.thymeleaf.org">
+        xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>Books Manager</title>
@@ -17,7 +17,7 @@
 
         <thead>
         <tr>
-            <th hidden >Book ID</th>
+            <th hidden>Book ID</th>
             <th>Book Title</th>
             <th>Authors</th>
             <th>Publishers</th>
@@ -43,9 +43,11 @@
             <td><span th:text="${book.stock}"> Stock </span></td>
 
             <td>
-                <a class="waves-effect waves-light btn" th:href="@{'/book/edit/' + ${book.bookID}}"><i class="material-icons left">edit</i> Edit</a>
+                <a class="waves-effect waves-light btn" th:href="@{'/book/edit/' + ${book.bookID}}"><i
+                        class="material-icons left">edit</i> Edit</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a class="waves-effect waves-light red btn" th:href="@{'/book/delete/' + ${book.bookID}}"><i class="material-icons left">delete</i> Delete</a>
+                <a class="waves-effect waves-light red btn" th:href="@{'/book/delete/' + ${book.bookID}}"><i
+                        class="material-icons left">delete</i> Delete</a>
             </td>
 
         </tr>

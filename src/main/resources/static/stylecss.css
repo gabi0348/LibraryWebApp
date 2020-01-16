@@ -1,27 +1,27 @@
 body {
-    background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(library_image.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(library_image.jpg);
     height: 100vh;
     background-position: center;
     background-size: cover;
 }
 
-.login-page{
+.login-page {
     width: 360px;
-    padding: 10%, 0,0;
+    padding: 10%, 0, 0;
     margin: auto;
 }
 
-.form{
-    position:relative;
+.form {
+    position: relative;
     z-index: 1;
     background: #FAFBFC;
     max-width: 360px;
     margin: 0 auto 100px;
     padding: 45px;
-    text-align:center;
+    text-align: center;
 }
 
-.form input{
+.form input {
     font-family: "Roboto", sans-serif;
     outline: 1;
     background: #f2f2f2;
@@ -32,25 +32,25 @@ body {
     box-sizing: border-box;
 }
 
-.form button{
+.form button {
     font-family: "Roboto", sans serif;
     text-transform: uppercase;
     outline: 0;
-    background:#31C453;
+    background: #31C453;
     width: 100%;
     border: 0;
     padding: 15px;
-    color: #ffffff; 
+    color: #ffffff;
     font-size: 14px;
     cursor: pointer;
 }
 
-.form button:hover,.form button:active{
-      background: rgb(46, 172, 75);
+.form button:hover, .form button:active {
+    background: rgb(46, 172, 75);
 }
 
-.form .message{
+.form .message {
     margin 15px 0 0;
     /* color:aliceblue; */
-    font-size:12px;
+    font-size: 12px;
 }

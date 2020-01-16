@@ -55,7 +55,7 @@ public class BookController {
         mav.addObject("allAuthors", allAuthors);
 
         Iterable<Publishers> allPublishers = service.getAllPublishers();
-        mav.addObject("allPublishers",allPublishers);
+        mav.addObject("allPublishers", allPublishers);
 
         return mav;
     }

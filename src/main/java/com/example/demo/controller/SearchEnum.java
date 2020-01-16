@@ -8,7 +8,13 @@ public enum SearchEnum {
     YEAR("year"),
     ISBN("isbn"),
     GENRE("genre"),
-    SALES("sales");
+    SALES("sales"),
+    SANATATE("sanatate"),
+    TOPANTREPRENORIAT("topantreprenoriat"),
+    ORDERDPUBLUSHER("orderpublisher"),
+    BESTSELLER("bestseller"),
+    ALLSEARCH("allsearch");
+
 
     String name;
 

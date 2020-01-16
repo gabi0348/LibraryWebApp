@@ -30,8 +30,10 @@
             <td><span th:text="${author.firstName}"> First Name </span></td>
             <td><span th:text="${author.secondName}"> Last Name </span></td>
             <td>
-                <a class="waves-effect waves-light btn" th:href="@{'/author/edit/' + ${author.authorID}}"><i class="material-icons left">edit</i> Edit</a>
-                <a class="waves-effect waves-light red btn" th:href="@{'/author/delete/' + ${author.authorID}}"><i class="material-icons left">delete</i> Delete</a>
+                <a class="waves-effect waves-light btn" th:href="@{'/author/edit/' + ${author.authorID}}"><i
+                        class="material-icons left">edit</i> Edit</a>
+                <a class="waves-effect waves-light red btn" th:href="@{'/author/delete/' + ${author.authorID}}"><i
+                        class="material-icons left">delete</i> Delete</a>
             </td>
 
         </tr>

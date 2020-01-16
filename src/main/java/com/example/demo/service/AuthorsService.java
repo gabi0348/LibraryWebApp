@@ -15,7 +15,7 @@ public class AuthorsService {
     @Autowired
     private AuthorsRepository authRepo;
 
-    public Iterable<Authors> listAll(){
+    public Iterable<Authors> listAll() {
         return authRepo.findAll();
     }
 
@@ -23,7 +23,7 @@ public class AuthorsService {
         authRepo.save(book);
     }
 
-    public Authors get(int authorID){
+    public Authors get(int authorID) {
         return authRepo.findById(authorID).get();
     }
 

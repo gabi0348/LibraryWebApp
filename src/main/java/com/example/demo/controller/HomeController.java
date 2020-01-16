@@ -35,6 +35,17 @@ public class HomeController {
             listBooks = service.findBooksByGenre(allParams.get(SearchEnum.GENRE.name));
         else if (allParams.containsKey(SearchEnum.SALES.name))
             listBooks = service.findSalesBooks();
+        else if (allParams.containsKey(SearchEnum.SANATATE.name))
+            listBooks = service.findSanatateBooks();
+        else if (allParams.containsKey(SearchEnum.TOPANTREPRENORIAT.name))
+            listBooks = service.findTopAntreprenoriatBooks();
+        else if (allParams.containsKey(SearchEnum.ORDERDPUBLUSHER.name))
+            listBooks = service.findOrderPublisherBooks();
+        else if (allParams.containsKey(SearchEnum.BESTSELLER.name))
+            listBooks = service.findBestSellerBooks();
+        else if (allParams.containsKey(SearchEnum.ALLSEARCH.name))
+            listBooks = service.findAllSearchBooks();
+
 
         ModelAndView model = new ModelAndView("home/index");
         model.addObject("listBooks", listBooks);

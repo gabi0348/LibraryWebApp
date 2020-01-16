@@ -25,14 +25,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-            .authorizeRequests()
+                .authorizeRequests()
                 .antMatchers(resources).permitAll()
                 .antMatchers("/", "/index").permitAll()
 //                .antMatchers("/book", "/book/**").access("hasRole('ADMIN')")
 //                .antMatchers("/home").access("hasRole('USER') or hasRole('ADMIN')")
                 .anyRequest().authenticated()
                 .and()
-            .formLogin()
+                .formLogin()
                 .loginPage("/login")
                 .permitAll()
                 .successHandler(myAuthenticationSuccessHandler())
@@ -40,11 +40,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("username")
                 .passwordParameter("password")
                 .and()
-            .logout()
+                .logout()
                 .permitAll()
                 .logoutSuccessUrl("/login?logout")
                 .and()
-            .csrf()
+                .csrf()
                 .disable();
     }
 
